@@ -1,0 +1,52 @@
+<!-- Contact -->
+<section id="contact">
+    <div class="inner">
+        <section>
+            <form method="post">
+                {{ form.hidden_tag() }}
+                <div class="fields">
+                    <div class="field half">
+                        <label for="name">Nome</label>
+                        {{ form.nome() }}
+                    </div>
+                    <div class="field half">
+                        <label for="email">Email</label>
+                        {{ form.email() }}
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        {{ form.mensagem }}
+                    </div>
+                </div>
+                <ul class="actions">
+                    <li>{{ form.enviar }}</li>
+                    <li>{{ form.reset }}</li>
+                </ul>
+            </form>
+        </section>
+        <section class="split">
+            <section>
+                <div class="contact-method">
+                    <span class="icon solid alt fa-envelope"></span>
+                    <h3>Email</h3>
+                    <a href="mailto:gtakagitoledo@gmail.com">gtakagitoledo@gmail.com</a>
+                </div>
+            </section>
+            <section>
+                <div class="contact-method">
+                    <span class="icon solid alt fa-phone"></span>
+                    <h3>Telefone</h3>
+                    <span>(51) 99867-9356</span>
+                </div>
+            </section>
+            <section>
+                <div class="contact-method">
+                    <span class="icon solid alt fa-home"></span>
+                    <h3>Endereço</h3>
+                    <span>Gravataí - Rio Grande do Sul<br />
+                    Brasil<br />
+                </div>
+            </section>
+        </section>
+    </div>
+</section>

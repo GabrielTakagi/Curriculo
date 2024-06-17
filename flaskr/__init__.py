@@ -1,7 +1,8 @@
 import os
 
 from flask import Flask
-from flaskr.blueprint.main import main_bp
+from flaskr.blueprint.main.main import main_bp
+from flask_wtf.csrf import CSRFProtect
 
 
 def create_app(test_config=None):
@@ -27,5 +28,6 @@ def create_app(test_config=None):
     
     #Registrar blueprint
     app.register_blueprint(main_bp)
+    CSRF = CSRFProtect(app)
 
     return app
