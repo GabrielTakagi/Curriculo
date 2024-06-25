@@ -16,7 +16,31 @@
 								</div>
 								
 								<section class="tiles">
-									{% for item in lista %}
+									{% for item in lista_formacoes %}
+										<article>
+											<span class="image">
+												<img src="images/pic01.jpg" alt="" />
+											</span>
+											<header class="major">
+												<h3><a href="landing.html" class="link">{{ item }}</a></h3>
+												<p>Ipsum dolor sit amet</p>
+											</header>
+										</article>
+									{% endfor %}
+								</section>
+							</section>
+							
+							<!-- two -->
+							<section id="two">
+
+								<div class="inner">
+									<header class="major">
+										<h2>Certificados</h2>
+									</header>
+								</div>
+								
+								<section class="tiles">
+									{% for item in lista_cursos %}
 										<article>
 											<span class="image">
 												<img src="images/pic01.jpg" alt="" />

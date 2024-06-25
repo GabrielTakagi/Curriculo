@@ -7,6 +7,7 @@ main_bp = Blueprint('main',__name__, template_folder='templates')
 def index():
     form = contactForm()
 
+    lista_formacoes = ('Tecnico em TI', 'Ciência da Computação')
     lista_cursos = ('Django','Django Rest','Flask')
 
     #Validacao do botao reset e enviar do formulario
@@ -17,4 +18,4 @@ def index():
             print("teste2")
 
 
-    return render_template('main/index.html', form=form, lista=lista_cursos)
+    return render_template('main/index.html', form = form, lista_cursos = lista_cursos, lista_formacoes = lista_formacoes)
