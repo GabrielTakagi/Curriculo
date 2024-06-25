@@ -3,6 +3,7 @@ from flaskr.blueprint.main.forms import contactForm
 
 main_bp = Blueprint('main',__name__, template_folder='templates')
 
+# Pagina inicial
 @main_bp.route('/', methods=['GET','POST'])
 def index():
     form = contactForm()
@@ -17,5 +18,13 @@ def index():
         elif form.enviar.data:
             print("teste2")
 
-
     return render_template('main/index.html', form = form, lista_cursos = lista_cursos, lista_formacoes = lista_formacoes)
+
+
+@main_bp.route('/formacao/<nome>')
+def formacao(nome):
+    return render_template('main/formacao.html', nome=nome)
+
+@main_bp.route('/curso/<nome>')
+def curso(nome):
+    return render_template('main/formacao.html', nome=nome)

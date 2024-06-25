@@ -1,59 +1,84 @@
 {% extends 'base.html' %}
 {% block conteudo %}
 
+	<!-- Banner -->
+	<section id="banner" class="major">
+		<div class="inner">
+			<header class="major">
+				<h1>Ola, meu nome é Gabriel Kento</h1>
+			</header>
+			<div class="content">
+				<p> 
+					Sou estudante de Ciência da Computação e tenho formação técnica em Tecnologia da Informação com
+					certificações em C++, C, microcontroladores, Python, Django, Flask e Django Rest Framework.<br>
+					Estou sempre em busca de novas oportunidades para aplicar meus conhecimentos e aprender mais sobre o desenvolvimento de software e conhecer novas pessoas que atuam na área da tecnologia.<br>
+					Obrigado por visitar meu site e conhecer um pouco mais sobre meu trabalho!
+				</p>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- Main -->
+	<div id="main">
+
+		<!-- Formacao academica -->
+			<section id="one">
+				
+				<!-- Titulo -->
+				<div class="inner">
+					<header class="major">
+						<h2>Formações Academicas</h2>
+					</header>
+				</div>
+				
+				<!-- Itens das formacoes -->
+				<section class="tiles">
+					{% for item in lista_formacoes %}
+						<article>
+							<span class="image">
+								<img src="{{ url_for('static', filename='images/pic02.jpg') }}" alt="" />
+							</span>
+							<header class="major">
+								<h3><a href="{{ url_for('main.formacao', nome = item) }}" class="link">{{ item }}</a></h3>
+								<p>Ipsum dolor sit amet</p>
+							</header>
+						</article>
+					{% endfor %}
+				</section>
+
+			</section>
 			
+			<!-- Cursos -->
+			<section id="two">
+				
+				<!-- Titulo -->
+				<div class="inner">
+					<header class="major">
+						<h2>Certificados</h2>
+					</header>
+				</div>
+				
 
-				<!-- Main -->
-					<div id="main">
+				<!-- Itens de cursos -->
+				<section class="tiles">
+					{% for item in lista_cursos %}
+						<article>
+							<span class="image">
+								<img src="images/pic01.jpg" alt="" />
+							</span>
+							<header class="major">
+								<h3><a href="{{ url_for('main.curso', nome = item) }}" class="link">{{ item }}</a></h3>
+								<p>Ipsum dolor sit amet</p>
+							</header>
+						</article>
+					{% endfor %}
+				</section>
+			</section>
 
-						<!-- One -->
-							<section id="one">
+	</div>
 
-								<div class="inner">
-									<header class="major">
-										<h2>Formações Academicas</h2>
-									</header>
-								</div>
-								
-								<section class="tiles">
-									{% for item in lista_formacoes %}
-										<article>
-											<span class="image">
-												<img src="images/pic01.jpg" alt="" />
-											</span>
-											<header class="major">
-												<h3><a href="landing.html" class="link">{{ item }}</a></h3>
-												<p>Ipsum dolor sit amet</p>
-											</header>
-										</article>
-									{% endfor %}
-								</section>
-							</section>
-							
-							<!-- two -->
-							<section id="two">
-
-								<div class="inner">
-									<header class="major">
-										<h2>Certificados</h2>
-									</header>
-								</div>
-								
-								<section class="tiles">
-									{% for item in lista_cursos %}
-										<article>
-											<span class="image">
-												<img src="images/pic01.jpg" alt="" />
-											</span>
-											<header class="major">
-												<h3><a href="landing.html" class="link">{{ item }}</a></h3>
-												<p>Ipsum dolor sit amet</p>
-											</header>
-										</article>
-									{% endfor %}
-								</section>
-							</section>
-
-					</div>
+<!-- Parte de contato -->
+{% include 'contact.html' %}
 
 {% endblock %}
