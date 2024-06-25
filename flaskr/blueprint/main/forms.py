@@ -8,4 +8,3 @@ class contactForm(FlaskForm):
      email = EmailField('Email', validators=[ Email(), Length(max=80, min=1)])
      mensagem = TextAreaField('Mensagem', validators=[ Length(max=350, min=1)], render_kw={"rows": 8})
      enviar = SubmitField('Enviar')
-     reset = SubmitField('Reset')
