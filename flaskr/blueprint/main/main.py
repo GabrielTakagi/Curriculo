@@ -13,10 +13,7 @@ def index():
 
     #Validacao do botao reset e enviar do formulario
     if form.validate_on_submit():
-        if form.reset.data:
-            print("teste1")
-        elif form.enviar.data:
-            print("teste2")
+        pass
 
     return render_template('main/index.html', form = form, lista_cursos = lista_cursos, lista_formacoes = lista_formacoes)
 

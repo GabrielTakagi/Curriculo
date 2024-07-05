@@ -3,13 +3,15 @@ import os
 from flask import Flask
 from flaskr.blueprint.main.main import main_bp
 from flask_wtf.csrf import CSRFProtect
+from dotenv import load_dotenv
 
+load_dotenv()
 
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
-        SECRET_KEY='dev',
+        SECRET_KEY=str(os.getenv('KEY')),
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
     )
 
